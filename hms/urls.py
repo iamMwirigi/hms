@@ -24,6 +24,7 @@ def home(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
-    path('admindashboard/', include('admindashboard.urls')), # Corrected to 'admindashboard.urls'
-    path('', home, name='home'),  # This correctly maps the root to your 'home' function
+    path('admindashboard/', include('admindashboard.urls')),
+    path('hospital/', include('hospital.urls')),
+    path('', home, name='home'),  
 ]

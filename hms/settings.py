@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'admindashboard',
+    'hospital'
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,16 @@ WSGI_APPLICATION = 'hms.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hms',                      
+        'USER': 'root',         
+        'PASSWORD': '31278527',  
+        'HOST': 'localhost',               
+        'PORT': '3306',                     
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            
+        },
     }
 }
 
